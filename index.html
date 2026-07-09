@@ -237,7 +237,7 @@
       <!-- Video khổ ngang 16:9 — thả file vào videos/quy-trinh-lam-tra.mp4 (hoặc đổi src) -->
       <div class="reveal max-w-3xl mx-auto mb-12">
         <div class="aspect-video rounded-3xl overflow-hidden shadow-xl bg-black">
-          <video class="w-full h-full object-cover" autoplay muted loop playsinline controls poster="images/anh-gioi-thieu.jpg">
+          <video id="processVideo" class="w-full h-full object-cover" autoplay muted loop playsinline controls preload="auto">
             <source src="videos/quy-trinh-lam-tra.mp4?v=3" type="video/mp4" />
             Trình duyệt của bạn không hỗ trợ video.
           </video>
@@ -567,6 +567,21 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ---------- Ép video quy trình tự chạy (dự phòng khi trình duyệt/app chặn autoplay) ----------
+    (function () {
+      const pv = document.getElementById('processVideo');
+      if (!pv) return;
+      const tryPlay = () => { pv.muted = true; const p = pv.play(); if (p && p.catch) p.catch(() => {}); };
+      const vio = new IntersectionObserver((es) => {
+        es.forEach(e => { if (e.isIntersecting) tryPlay(); });
+      }, { threshold: 0.25 });
+      vio.observe(pv);
+      ['touchstart', 'click', 'scroll', 'keydown'].forEach(ev =>
+        document.addEventListener(ev, tryPlay, { once: true, passive: true }));
+      pv.addEventListener('loadeddata', tryPlay);
+      tryPlay();
+    })();
 
     // ---------- Sticky CTA ----------
     window.addEventListener('scroll', () => {
