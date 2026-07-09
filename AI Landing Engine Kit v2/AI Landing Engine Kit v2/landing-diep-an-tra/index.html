@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============ SEO META ============ -->
+  <title>Diệp An Trà — Tinh Hoa Thảo Dược Miền Núi | Trà Sạch OCOP 3 Sao</title>
+  <meta name="description" content="Trà thảo dược sạch trồng hữu cơ trên đỉnh núi 1.500m Đông Bắc: trà hoa đu đủ đực, tía tô, giảo cổ lam. Đạt chuẩn OCOP 3 sao. Giao hàng toàn quốc, freeship đơn từ 300k." />
+  <meta name="keywords" content="Diệp An Trà, trà thảo dược, trà hoa đu đủ đực, trà tía tô, OCOP, trà sạch Thái Nguyên" />
+  <meta name="author" content="Tổ hợp tác nông nghiệp Quân Hà" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Diệp An Trà — Tinh Hoa Thảo Dược Miền Núi" />
+  <meta property="og:description" content="Trà thảo dược sạch, OCOP 3 sao, hái tay từ đỉnh 1.500m. Chăm sóc sức khỏe cả nhà một cách tự nhiên." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1200&q=80" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="vi_VN" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts (Vietnamese friendly) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2E5D34',      // rừng xanh đậm
+            primaryLight: '#4A7C4E',
+            gold: '#C29A3B',         // vàng nâu
+            earth: '#8B6F47',        // nâu đất
+            cream: '#FAF6EE'         // nền kem
+          },
+          fontFamily: {
+            heading: ['"Playfair Display"', 'serif'],
+            body: ['"Be Vietnam Pro"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Be Vietnam Pro', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', serif; }
+    html { scroll-behavior: smooth; }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(28px); transition: all .7s cubic-bezier(.2,.7,.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Hero gradient overlay */
+    .hero-bg {
+      background:
+        linear-gradient(rgba(20,40,22,.72), rgba(20,40,22,.55)),
+        url('images/anh-bia.jpg') center/cover no-repeat,
+        linear-gradient(135deg,#2E5D34,#1b3a20);
+    }
+    .leaf-pattern { background-color:#FAF6EE; background-image: radial-gradient(#2e5d3410 1px, transparent 1px); background-size: 22px 22px; }
+
+    /* Loading */
+    #loader { transition: opacity .5s ease; }
+    .spin { animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Accordion */
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+
+    /* Marquee for stats not needed */
+    ::selection { background:#C29A3B; color:#fff; }
+    .no-scrollbar::-webkit-scrollbar { display:none; }
+  </style>
+</head>
+
+<body class="bg-cream text-gray-800">
+
+  <!-- ============ LOADING ============ -->
+  <div id="loader" class="fixed inset-0 z-[100] bg-primary flex flex-col items-center justify-center text-cream">
+    <div class="text-5xl mb-4">🌿</div>
+    <div class="w-10 h-10 border-4 border-cream/30 border-t-gold rounded-full spin"></div>
+    <p class="mt-4 font-heading text-xl tracking-wide">Diệp An Trà</p>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="fixed top-0 inset-x-0 z-40 bg-cream/90 backdrop-blur border-b border-gold/20">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2">
+        <img src="images/logo.jpg" alt="Logo Diệp An Trà" class="h-10 w-10 rounded-full object-cover" />
+        <span class="font-heading font-bold text-primary text-xl leading-none">Diệp An Trà</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-primary">
+        <a href="#products" class="hover:text-gold transition">Sản phẩm</a>
+        <a href="#story" class="hover:text-gold transition">Câu chuyện</a>
+        <a href="#process" class="hover:text-gold transition">Quy trình</a>
+        <a href="#reviews" class="hover:text-gold transition">Đánh giá</a>
+        <a href="#faq" class="hover:text-gold transition">Hỏi đáp</a>
+      </nav>
+      <a href="tel:0984104326" class="bg-gold hover:bg-earth text-white text-sm font-semibold px-4 py-2 rounded-full transition shadow">📞 0984 104 326</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO (Section 1-3) ============ -->
+  <section id="hero" class="pt-16 bg-cream">
+    <img src="images/anh-bia.jpg" alt="Diệp An Trà — Tinh Hoa Thảo Dược Miền Núi" class="w-full block" />
+    <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#products" class="w-full sm:w-auto bg-gold hover:bg-earth text-white text-lg font-bold px-8 py-4 rounded-full shadow-lg transition text-center">
+        🛒 ĐẶT HÀNG NGAY — GIAO TẬN NHÀ
+      </a>
+      <a href="https://zalo.me/0984104326" target="_blank" rel="noopener" class="w-full sm:w-auto bg-primary hover:bg-primaryLight text-white text-lg font-semibold px-8 py-4 rounded-full transition text-center">
+        💬 Nhắn Zalo tư vấn
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ STORY / SOLUTION (Section 5) ============ -->
+  <section id="story" class="py-20 leaf-pattern">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <!-- Thay bằng ảnh chị Đinh Thị Diệp / vùng trồng thực tế -->
+        <div class="rounded-3xl overflow-hidden shadow-xl aspect-[4/5] bg-cover bg-center"
+             style="background-image:linear-gradient(rgba(46,93,52,.15),rgba(46,93,52,.15)),url('images/anh-gioi-thieu.jpg')">
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="font-heading text-gold font-bold mb-4 text-2xl md:text-3xl">Câu chuyện thương hiệu</p>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          <strong>Diệp An Trà</strong> được sáng lập bởi <strong>Đinh Thị Diệp</strong> – người con lớn lên giữa núi rừng Bắc Kạn (nay thuộc tỉnh Thái Nguyên), nơi những bài thuốc dân gian đã gắn bó và nuôi dưỡng tuổi thơ chị.
+        </p>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Với <strong>nền tảng chuyên môn y tế</strong>, tình yêu dành cho thảo dược bản địa cùng khát vọng gìn giữ những giá trị truyền thống, chị đã tạo nên Diệp An Trà như một cầu nối đưa tinh hoa núi rừng đến với mọi gia đình. Mỗi sản phẩm, từ trà hoa đu đủ đực, trà tía tô, trà tía tô búp ổi, trà dây rừng đến giảo cổ lam, đều được tuyển chọn từ nguồn nguyên liệu sạch, chế biến cẩn trọng, mang đến trải nghiệm thưởng trà tự nhiên, an toàn và tiện lợi, đồng thời góp phần lan tỏa giá trị dược liệu Việt và phát triển sinh kế bền vững cho người dân vùng cao.
+        </p>
+        <div class="bg-white/70 border-l-4 border-gold rounded-r-xl p-5 mb-6">
+          <p class="text-gray-800"><strong class="text-primary">Không dành cho</strong> ai chỉ tìm một thức uống công nghiệp giá rẻ, uống cho có.</p>
+          <p class="text-gray-800 mt-2"><strong class="text-primary">Dành cho</strong> anh/chị muốn chăm sóc sức khỏe cả nhà bằng thảo dược sạch, nguồn gốc rõ ràng, làm bằng cái tâm của người miền núi.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-sm">
+          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full">🌱 Tự nhiên</span>
+          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full">❤️ Chân thật</span>
+          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full">🤝 Trách nhiệm</span>
+          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full">🏔️ Bản sắc</span>
+          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full">🌿 Bền vững</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS (Section 8 - con số) ============ -->
+  <section class="py-16 bg-primary text-cream">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal">
+      <div><div class="text-4xl font-bold font-heading text-gold" data-count="6">6</div><p class="mt-1 text-sm text-cream/80">Năm kinh nghiệm</p></div>
+      <div><div class="text-4xl font-bold font-heading text-gold" data-count="2000">2.000+</div><p class="mt-1 text-sm text-cream/80">Khách hàng tin dùng</p></div>
+      <div><div class="text-4xl font-bold font-heading text-gold" data-count="5">5</div><p class="mt-1 text-sm text-cream/80">Tỉnh thành phân phối</p></div>
+      <div><div class="text-4xl font-bold font-heading text-gold" data-count="5">5</div><p class="mt-1 text-sm text-cream/80">Tấn sản phẩm / năm</p></div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCTS (Section 9 + 11) ============ -->
+  <section id="products" class="py-20 bg-cream">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4 reveal">Sản Phẩm Nổi Bật</h2>
+      <p class="text-center text-gray-500 mb-3 reveal">Thảo dược sạch, đạt chuẩn OCOP — chọn ngay cho gia đình</p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Product 1 -->
+        <div class="reveal bg-white rounded-3xl shadow-md overflow-hidden flex flex-col">
+          <img src="images/tra-hoa-du-du-duc.jpg" alt="Trà Hoa Đu Đủ Đực Diệp An Trà" loading="lazy" class="aspect-square w-full object-contain bg-white p-2" />
+          <div class="p-6 flex flex-col flex-1">
+            <span class="self-start bg-gold/15 text-earth text-xs font-semibold px-2.5 py-1 rounded-full mb-3">OCOP 3 sao 2025</span>
+            <h3 class="font-heading text-xl font-bold text-primary mb-2">Trà Hoa Đu Đủ Đực</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-1">Hộp 100g · Hoa đu đủ đực tuyển chọn từ vùng núi cao 1.500m, canh tác theo hướng hữu cơ. Thu hái thủ công và sấy khô cẩn thận để lưu giữ trọn vẹn hương thơm tự nhiên. Nước trà vàng óng, hương thơm nồng đặc trưng, vị hơi đắng lúc đầu và hậu ngọt thanh dễ chịu.</p>
+            <div class="mb-2"><span class="text-2xl font-bold text-primary">100.000đ</span></div>
+            <button onclick="openOrder('Trà Hoa Đu Đủ Đực', 100000)" class="w-full bg-gold hover:bg-earth text-white font-bold py-3 rounded-full transition">Đặt ngay</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="reveal bg-white rounded-3xl shadow-md overflow-hidden flex flex-col">
+          <img src="images/tra-tui-loc-tia-to.jpg" alt="Trà Túi Lọc Tía Tô Diệp An Trà" loading="lazy" class="aspect-square w-full object-contain bg-white p-2" />
+          <div class="p-6 flex flex-col flex-1">
+            <span class="self-start bg-gold/15 text-earth text-xs font-semibold px-2.5 py-1 rounded-full mb-3">OCOP 3 sao 2025</span>
+            <h3 class="font-heading text-xl font-bold text-primary mb-2">Trà Túi Lọc Tía Tô</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-1">Hộp · Lá tía tô 100% nguyên chất tuyển chọn từ vùng nguyên liệu sạch, canh tác theo hướng hữu cơ. Sấy khô theo quy trình giữ trọn hương thơm và màu sắc tự nhiên. Trà có vị thanh nhẹ, dễ uống, pha nóng hoặc lạnh, tiện lợi với dạng túi lọc cho nhu cầu sử dụng hằng ngày.</p>
+            <div class="mb-2"><span class="text-2xl font-bold text-primary">70.000đ</span></div>
+            <button onclick="openOrder('Trà Túi Lọc Tía Tô', 70000)" class="w-full bg-gold hover:bg-earth text-white font-bold py-3 rounded-full transition">Đặt ngay</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="reveal bg-white rounded-3xl shadow-md overflow-hidden flex flex-col">
+          <img src="images/tra-bup-tia-to.jpg" alt="Trà Búp Tía Tô Diệp An Trà" loading="lazy" class="aspect-square w-full object-contain bg-white p-2" />
+          <div class="p-6 flex flex-col flex-1">
+            <span class="self-start bg-gold/15 text-earth text-xs font-semibold px-2.5 py-1 rounded-full mb-3">OCOP 3 sao 2024</span>
+            <h3 class="font-heading text-xl font-bold text-primary mb-2">Trà Búp Tía Tô</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-1">Hũ 85g · Tuyển chọn từ những búp tía tô non thu hái thủ công trong mùa vụ tháng 3 đến tháng 10 tại vùng nguyên liệu canh tác theo hướng hữu cơ. Búp trà được sao khô theo quy trình kiểm soát nghiêm ngặt nhằm lưu giữ hương thơm, màu sắc và hương vị tự nhiên. Trà có vị thanh dịu, hậu ngọt nhẹ, thích hợp thưởng thức hằng ngày.</p>
+            <div class="mb-2"><span class="text-2xl font-bold text-primary">85.000đ</span></div>
+            <button onclick="openOrder('Trà Búp Tía Tô', 85000)" class="w-full bg-gold hover:bg-earth text-white font-bold py-3 rounded-full transition">Đặt ngay</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sắp lên kệ -->
+      <div class="mt-10 text-center reveal">
+        <p class="text-gray-600 mb-3"><strong class="text-primary">Sắp lên kệ:</strong> Trà tía tô búp ổi · Trà lạc tiên · Trà dây rừng · Giảo cổ lam</p>
+        <a href="https://zalo.me/0984104326" target="_blank" rel="noopener" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-6 py-2.5 rounded-full transition">💬 Nhắn Zalo đặt trước</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFITS (Section 6) ============ -->
+  <section class="py-20 bg-cream">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4 reveal">Chọn Diệp An Trà, anh/chị nhận được</h2>
+      <p class="text-center text-gray-500 mb-12 reveal">Không chỉ là một ấm trà — là sự an tâm cho cả gia đình</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="reveal flex gap-4 bg-white rounded-2xl p-6 shadow-sm"><span class="text-3xl">🌱</span><div><h3 class="font-semibold text-lg text-primary mb-1">Trồng hữu cơ ở độ cao 1.500m</h3><p class="text-gray-600 text-sm">Khí hậu trong lành, ít sâu bệnh, cây tích tụ dưỡng chất tốt hơn vùng thấp.</p></div></div>
+        <div class="reveal flex gap-4 bg-white rounded-2xl p-6 shadow-sm"><span class="text-3xl">🖐️</span><div><h3 class="font-semibold text-lg text-primary mb-1">Hái tay đúng mùa, sấy giữ hương</h3><p class="text-gray-600 text-sm">Pha ra thơm nồng, đậm vị thật, không nhạt nhòa.</p></div></div>
+        <div class="reveal flex gap-4 bg-white rounded-2xl p-6 shadow-sm"><span class="text-3xl">🏅</span><div><h3 class="font-semibold text-lg text-primary mb-1">Đạt chuẩn OCOP 3 sao</h3><p class="text-gray-600 text-sm">Được hội đồng đánh giá, minh bạch nguồn gốc.</p></div></div>
+        <div class="reveal flex gap-4 bg-white rounded-2xl p-6 shadow-sm"><span class="text-3xl">☕</span><div><h3 class="font-semibold text-lg text-primary mb-1">Tiện lợi cho cả nhà</h3><p class="text-gray-600 text-sm">Dạng túi lọc / trà khô, pha nóng hay lạnh đều hợp, dùng mỗi ngày.</p></div></div>
+        <div class="reveal flex gap-4 bg-white rounded-2xl p-6 shadow-sm md:col-span-2"><span class="text-3xl">❤️</span><div><h3 class="font-semibold text-lg text-primary mb-1">Mua trà, góp phần tạo sinh kế cho người dân vùng cao</h3><p class="text-gray-600 text-sm">Mỗi hộp trà là một câu chuyện tử tế, phát triển bền vững cùng bà con miền núi.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS / HOW IT WORKS (Section 7) ============ -->
+  <section id="process" class="py-20 bg-primary/5">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4 reveal">Từ Đỉnh Núi Đến Ấm Trà</h2>
+      <p class="text-center text-gray-500 mb-12 reveal">4 bước làm nên một hộp trà Diệp An Trà</p>
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+
+        <!-- Video minh họa 9:16 bên trái — thả file vào videos/quy-trinh-lam-tra.mp4 (hoặc đổi src) -->
+        <div class="reveal flex justify-center">
+          <div class="w-full max-w-xs aspect-[9/16] rounded-3xl overflow-hidden shadow-xl bg-black">
+            <video class="w-full h-full object-cover" autoplay muted loop playsinline controls poster="images/anh-gioi-thieu.jpg">
+              <source src="videos/quy-trinh-lam-tra.mp4" type="video/mp4" />
+              Trình duyệt của bạn không hỗ trợ video.
+            </video>
+          </div>
+        </div>
+
+        <!-- 4 bước bên phải -->
+        <div class="space-y-4">
+          <div class="reveal flex gap-4 bg-white rounded-2xl p-5 shadow-sm"><div class="text-3xl">🌸</div><div><div class="text-gold font-bold text-sm mb-0.5">Bước 1</div><h3 class="font-semibold text-primary mb-1">Trồng hữu cơ 1.500m</h3><p class="text-gray-600 text-sm">Vùng núi cao Đông Bắc, không thuốc trừ sâu hóa học.</p></div></div>
+          <div class="reveal flex gap-4 bg-white rounded-2xl p-5 shadow-sm"><div class="text-3xl">🖐️</div><div><div class="text-gold font-bold text-sm mb-0.5">Bước 2</div><h3 class="font-semibold text-primary mb-1">Thu hái tay đúng mùa</h3><p class="text-gray-600 text-sm">Hoa đu đủ hái tháng 3–11, búp tía tô tháng 3–10.</p></div></div>
+          <div class="reveal flex gap-4 bg-white rounded-2xl p-5 shadow-sm"><div class="text-3xl">☀️</div><div><div class="text-gold font-bold text-sm mb-0.5">Bước 3</div><h3 class="font-semibold text-primary mb-1">Rửa sạch – sấy khô</h3><p class="text-gray-600 text-sm">Giữ nguyên màu, hương và dưỡng chất tự nhiên.</p></div></div>
+          <div class="reveal flex gap-4 bg-white rounded-2xl p-5 shadow-sm"><div class="text-3xl">📦</div><div><div class="text-gold font-bold text-sm mb-0.5">Bước 4</div><h3 class="font-semibold text-primary mb-1">Đóng gói chuẩn</h3><p class="text-gray-600 text-sm">Đến tay anh/chị vẫn thơm nguyên như ngày đầu.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GUARANTEE (Section 10) ============ -->
+  <section class="py-16 bg-primary/5">
+    <div class="max-w-4xl mx-auto px-4 reveal">
+      <div class="bg-white border border-gold/30 rounded-3xl p-8 shadow-sm">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-8">🛡️ Cam Kết Từ Diệp An Trà</h2>
+        <div class="grid sm:grid-cols-2 gap-5 text-gray-700">
+          <p class="flex gap-3"><span class="text-primary text-xl">✅</span> <span><strong>100% thảo dược tự nhiên</strong> — không hương liệu, không chất bảo quản</span></p>
+          <p class="flex gap-3"><span class="text-primary text-xl">✅</span> <span><strong>Đổi trả trong 7 ngày</strong> nếu sản phẩm lỗi do sản xuất</span></p>
+          <p class="flex gap-3"><span class="text-primary text-xl">✅</span> <span><strong>Thanh toán khi nhận (COD)</strong> — kiểm tra hàng rồi mới trả tiền</span></p>
+          <p class="flex gap-3"><span class="text-primary text-xl">✅</span> <span><strong>Freeship</strong> cho đơn hàng từ 300.000đ, giao toàn quốc</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS (Section 8 - feedback) ============ -->
+  <section id="reviews" class="py-20 bg-cream">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4 reveal">Khách Hàng Nói Gì</h2>
+      <p class="text-center text-gray-500 mb-12 reveal">Hơn 2.000 gia đình đã tin dùng Diệp An Trà</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- LƯU Ý: điền nội dung feedback THẬT từ khách (không bịa). Thêm ảnh khách để tăng chuyển đổi. -->
+        <div class="reveal bg-white rounded-2xl p-6 shadow-sm ring-2 ring-gold/40">
+          <div class="text-gold mb-3">★★★★★</div>
+          <p class="text-gray-700 italic mb-4">"Trà rất thơm, dễ uống và hoàn toàn tự nhiên. Mình đã chuyển sang uống hằng ngày thay cho nước ngọt và cảm thấy rất yên tâm."</p>
+          <div class="flex items-center gap-3">
+            <img src="images/khach-1.jpg" alt="Chị Nguyễn Thu Hà" loading="lazy" class="w-11 h-11 rounded-full object-cover" />
+            <div><p class="font-semibold text-primary text-sm">Chị Nguyễn Thu Hà</p><p class="text-gray-500 text-xs">Nhân viên văn phòng · Hà Nội</p></div>
+          </div>
+        </div>
+        <div class="reveal bg-white rounded-2xl p-6 shadow-sm ring-2 ring-gold/40">
+          <div class="text-gold mb-3">★★★★★</div>
+          <p class="text-gray-700 italic mb-4">"Mình thích nhất là hương vị thanh nhẹ, không quá đắng. Sản phẩm đóng gói đẹp, tiện pha và rất phù hợp để cả gia đình cùng sử dụng."</p>
+          <div class="flex items-center gap-3">
+            <img src="images/khach-2.jpg" alt="Chị Nguyễn Thị Chi" loading="lazy" class="w-11 h-11 rounded-full object-cover" />
+            <div><p class="font-semibold text-primary text-sm">Chị Nguyễn Thị Chi</p><p class="text-gray-500 text-xs">Giáo viên · Hà Nội</p></div>
+          </div>
+        </div>
+        <div class="reveal bg-white rounded-2xl p-6 shadow-sm ring-2 ring-gold/40">
+          <div class="text-gold mb-3">★★★★★</div>
+          <p class="text-gray-700 italic mb-4">"Điều mình ấn tượng là nguồn gốc nguyên liệu rõ ràng và đạt OCOP. Đây là sản phẩm mình sẵn sàng giới thiệu cho người thân và bạn bè."</p>
+          <div class="flex items-center gap-3">
+            <img src="images/khach-3.jpg" alt="Anh Nguyễn Duy Nam" loading="lazy" class="w-11 h-11 rounded-full object-cover" />
+            <div><p class="font-semibold text-primary text-sm">Anh Nguyễn Duy Nam</p><p class="text-gray-500 text-xs">Bác sĩ · Thái Nguyên</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAYMENT — SePay VietQR ============ -->
+  <section id="payment" class="py-20 bg-primary/5">
+    <div class="max-w-2xl mx-auto px-4 text-center reveal">
+      <h2 class="text-3xl font-bold text-primary mb-3">Thanh Toán Dễ Dàng</h2>
+      <p class="text-gray-600 mb-8">Quét mã QR bằng app ngân hàng — hỗ trợ 44+ ngân hàng Việt Nam, xác nhận tức thì. Hoặc chọn COD trả tiền khi nhận.</p>
+      <div class="bg-white rounded-2xl shadow-lg p-8 inline-block">
+        <img src="https://qr.sepay.vn/img?acc=3950262783&bank=BIDV&template=compact&des=DIEPANTRA"
+             alt="Mã QR thanh toán Diệp An Trà" class="w-56 h-56 mx-auto rounded-lg border" />
+        <div class="mt-6 text-left bg-cream rounded-lg p-4 text-sm text-gray-700">
+          <p class="mb-1"><strong>Ngân hàng:</strong> BIDV</p>
+          <p class="mb-1"><strong>Số TK:</strong> 3950262783</p>
+          <p class="mb-1"><strong>Chủ TK:</strong> Tổ hợp tác nông nghiệp Quân Hà</p>
+          <p><strong>Nội dung CK:</strong> DIEPANTRA [SĐT của bạn]</p>
+        </div>
+        <p class="mt-4 text-xs text-gray-500">Quét bằng bất kỳ app ngân hàng nào • Miễn phí</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ (Section 13) ============ -->
+  <section id="faq" class="py-20 bg-cream">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12 reveal">Câu Hỏi Thường Gặp</h2>
+      <div class="space-y-3" id="faq-list">
+        <!-- items injected below via markup -->
+        <div class="faq-item bg-white rounded-xl shadow-sm reveal">
+          <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold text-primary">
+            <span>Trà có phải hàng tự nhiên thật không, hay pha trộn?</span><span class="faq-icon text-gold text-xl">+</span>
+          </button>
+          <div class="faq-body px-5"><p class="pb-5 text-gray-600">100% thảo dược trồng hữu cơ tại vùng núi 1.500m, đạt chuẩn OCOP 3 sao — quy trình trồng, hái, sấy minh bạch (xem mục "Từ đỉnh núi đến ấm trà").</p></div>
+        </div>
+        <div class="faq-item bg-white rounded-xl shadow-sm reveal">
+          <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold text-primary">
+            <span>Trà này có tác dụng gì?</span><span class="faq-icon text-gold text-xl">+</span>
+          </button>
+          <div class="faq-body px-5"><p class="pb-5 text-gray-600">Diệp An Trà là trà thảo dược dùng hằng ngày để thư giãn và bổ sung nước, không phải thuốc chữa bệnh. Với nhu cầu sức khỏe cụ thể, anh/chị nên tham khảo thêm ý kiến bác sĩ.</p></div>
+        </div>
+        <div class="faq-item bg-white rounded-xl shadow-sm reveal">
+          <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold text-primary">
+            <span>Pha như thế nào cho ngon?</span><span class="faq-icon text-gold text-xl">+</span>
+          </button>
+          <div class="faq-body px-5"><p class="pb-5 text-gray-600">Trà túi lọc hãm nước sôi 5–7 phút; trà khô (hoa đu đủ, búp tía tô) hãm 8–10 phút. Dùng nóng hoặc để nguội uống lạnh đều ngon.</p></div>
+        </div>
+        <div class="faq-item bg-white rounded-xl shadow-sm reveal">
+          <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold text-primary">
+            <span>Giá có mắc không?</span><span class="faq-icon text-gold text-xl">+</span>
+          </button>
+          <div class="faq-body px-5"><p class="pb-5 text-gray-600">Chỉ từ 70.000đ/hộp, dùng được nhiều ngày — rẻ hơn một ly nước ngoài hàng mà lại sạch, tự nhiên. Combo mua 5 tặng 1 còn tiết kiệm hơn.</p></div>
+        </div>
+        <div class="faq-item bg-white rounded-xl shadow-sm reveal">
+          <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold text-primary">
+            <span>Bao lâu nhận được hàng?</span><span class="faq-icon text-gold text-xl">+</span>
+          </button>
+          <div class="faq-body px-5"><p class="pb-5 text-gray-600">2–4 ngày khu vực miền Bắc, 3–5 ngày miền Nam. Giao toàn quốc, freeship đơn từ 300.000đ.</p></div>
+        </div>
+        <div class="faq-item bg-white rounded-xl shadow-sm reveal">
+          <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold text-primary">
+            <span>Lỡ nhận hàng không ưng thì sao?</span><span class="faq-icon text-gold text-xl">+</span>
+          </button>
+          <div class="faq-body px-5"><p class="pb-5 text-gray-600">Anh/chị được kiểm tra hàng khi nhận (COD) và đổi trả trong 7 ngày nếu lỗi sản xuất.</p></div>
+        </div>
+        <div class="faq-item bg-white rounded-xl shadow-sm reveal">
+          <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold text-primary">
+            <span>Bảo quản được bao lâu?</span><span class="faq-icon text-gold text-xl">+</span>
+          </button>
+          <div class="faq-body px-5"><p class="pb-5 text-gray-600">Trà sấy khô, đóng gói kín — bảo quản nơi khô ráo, tránh ẩm và nắng trực tiếp; xem hạn cụ thể trên bao bì.</p></div>
+        </div>
+        <div class="faq-item bg-white rounded-xl shadow-sm reveal">
+          <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold text-primary">
+            <span>Diệp An Trà có thật sự uy tín không?</span><span class="faq-icon text-gold text-xl">+</span>
+          </button>
+          <div class="faq-body px-5"><p class="pb-5 text-gray-600">Thương hiệu của Tổ hợp tác Quân Hà (Thái Nguyên), 6 năm kinh nghiệm, 2.000+ khách tin dùng, đạt OCOP 3 sao 2 năm liền. Gọi/Zalo 0984 104 326 để được tư vấn trực tiếp.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA (Section 14) ============ -->
+  <section class="py-20 bg-primary text-cream">
+    <div class="max-w-3xl mx-auto px-4 text-center reveal">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Mang Tinh Hoa Thảo Dược Miền Núi Về Cho Cả Nhà 🌿</h2>
+      <div class="space-y-2 text-cream/90 mb-6 inline-block text-left">
+        <p>✅ Trà thảo dược sạch, OCOP 3 sao, hái tay từ đỉnh 1.500m</p>
+        <p>✅ Freeship đơn từ 300k · Thanh toán khi nhận (COD)</p>
+        <p>✅ Đổi trả 7 ngày nếu lỗi — mua an tâm tuyệt đối</p>
+      </div>
+      <a href="#products" class="inline-block bg-gold hover:bg-earth text-white text-lg font-bold px-10 py-4 rounded-full shadow-lg transition mb-4">🛒 ĐẶT HÀNG NGAY — GIAO TẬN NHÀ</a>
+      <p class="text-cream/80 text-sm mb-8">📞 Hotline / Zalo: <a href="tel:0984104326" class="underline font-semibold">0984 104 326</a> · 7:00–21:00 hằng ngày</p>
+      <p class="max-w-xl mx-auto text-cream/70 italic text-sm border-t border-cream/20 pt-6">
+        P.S. Sức khỏe cả nhà không nên chờ đợi. Một ấm trà sạch mỗi ngày hôm nay là món quà anh/chị dành cho những người mình thương yêu nhất.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-[#1b3a20] text-cream/80 py-12">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm">
+      <div>
+        <div class="flex items-center gap-2 mb-3"><span class="text-2xl">🌿</span><span class="font-heading font-bold text-cream text-lg">Diệp An Trà</span></div>
+        <p>Tinh Hoa Thảo Dược Miền Núi</p>
+        <p class="mt-2">Tổ hợp tác nông nghiệp Quân Hà</p>
+        <p>Thôn Tân Xuân – Xã Cẩm Giàng, Thái Nguyên</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-cream mb-3">Liên hệ</h4>
+        <p>📞 Hotline/Zalo: <a href="tel:0984104326" class="hover:text-gold">0984 104 326</a></p>
+        <p>✉️ Email: <a href="mailto:diepantra@gmail.com" class="hover:text-gold">diepantra@gmail.com</a></p>
+        <p>🕐 Giờ làm việc: 7:00 – 21:00 hằng ngày</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-cream mb-3">Chính sách</h4>
+        <p>🔒 Thanh toán an toàn (COD / Chuyển khoản)</p>
+        <p>🚚 Giao toàn quốc · Freeship từ 300k</p>
+        <p>↩️ Đổi trả trong 7 ngày nếu lỗi sản xuất</p>
+        <button onclick="openAdmin()" class="mt-4 inline-block border border-cream/30 rounded-full px-4 py-2 hover:bg-cream/10 hover:text-gold transition">🔒 Admin Diệp An Trà</button>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 mt-8 pt-6 pb-28 md:pb-6 border-t border-cream/15 text-center text-xs text-cream/60">
+      © 2026 Diệp An Trà — Tổ hợp tác nông nghiệp Quân Hà. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ============ STICKY MOBILE CTA ============ -->
+  <div id="sticky-cta" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-primary text-white px-4 py-3 shadow-2xl transform translate-y-full transition-transform duration-300">
+    <div class="flex items-center justify-between gap-3">
+      <div class="text-xs leading-tight"><p class="font-semibold">🌿 Trà sạch OCOP 3 sao</p><p class="text-cream/80">Freeship đơn từ 300k</p></div>
+      <a href="#products" class="bg-gold text-white font-bold px-5 py-2.5 rounded-full text-sm whitespace-nowrap">Đặt ngay</a>
+    </div>
+  </div>
+
+  <!-- ============ ZALO FLOATING ============ -->
+  <a href="https://zalo.me/0984104326" target="_blank" rel="noopener"
+     class="fixed right-4 bottom-20 md:bottom-6 z-40 bg-[#0068FF] text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center font-bold text-xs hover:scale-105 transition"
+     aria-label="Chat Zalo">Zalo</a>
+
+  <!-- ============ ORDER MODAL ============ -->
+  <div id="order-modal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/50 p-4">
+    <div class="bg-white rounded-2xl w-full max-w-md max-h-[90vh] overflow-y-auto no-scrollbar">
+      <div class="flex items-center justify-between p-5 border-b sticky top-0 bg-white">
+        <h3 class="font-heading text-xl font-bold text-primary">Đặt Hàng</h3>
+        <button onclick="closeOrder()" class="text-gray-400 hover:text-gray-700 text-2xl leading-none">&times;</button>
+      </div>
+      <form id="order-form" class="p-5 space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Sản phẩm</label>
+          <select id="of-product" class="w-full border rounded-lg px-3 py-2.5 text-base focus:ring-2 focus:ring-gold outline-none">
+            <option value="Trà Hoa Đu Đủ Đực|100000">Trà Hoa Đu Đủ Đực — 100.000đ</option>
+            <option value="Trà Túi Lọc Tía Tô|70000">Trà Túi Lọc Tía Tô — 70.000đ</option>
+            <option value="Trà Búp Tía Tô|85000">Trà Búp Tía Tô — 85.000đ</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Số lượng</label>
+            <input id="of-qty" type="number" min="1" value="1" class="w-full border rounded-lg px-3 py-2.5 text-base focus:ring-2 focus:ring-gold outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Tạm tính</label>
+            <div id="of-total" class="w-full border rounded-lg px-3 py-2.5 bg-cream font-bold text-primary">100.000đ</div>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Họ và tên *</label>
+          <input id="of-name" type="text" class="w-full border rounded-lg px-3 py-2.5 text-base focus:ring-2 focus:ring-gold outline-none" placeholder="Nguyễn Văn A" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại *</label>
+          <input id="of-phone" type="tel" class="w-full border rounded-lg px-3 py-2.5 text-base focus:ring-2 focus:ring-gold outline-none" placeholder="09xxxxxxxx" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Địa chỉ nhận hàng *</label>
+          <textarea id="of-address" rows="2" class="w-full border rounded-lg px-3 py-2.5 text-base focus:ring-2 focus:ring-gold outline-none" placeholder="Số nhà, thôn/xã, huyện, tỉnh"></textarea>
+        </div>
+        <p id="of-error" class="text-red-500 text-sm hidden"></p>
+        <button type="submit" class="w-full bg-gold hover:bg-earth text-white font-bold py-3.5 rounded-full transition">Xác nhận đặt hàng</button>
+        <p class="text-center text-xs text-gray-500">Thanh toán khi nhận (COD) hoặc chuyển khoản. Freeship đơn từ 300k.</p>
+      </form>
+      <!-- payment step -->
+      <div id="order-success" class="hidden p-5">
+        <div class="text-center mb-4">
+          <div class="text-4xl mb-1">🧾</div>
+          <h3 class="font-heading text-2xl font-bold text-primary">Thanh toán đơn hàng</h3>
+          <p class="text-gray-500 text-sm">Quét mã QR hoặc chuyển khoản theo thông tin bên dưới</p>
+        </div>
+
+        <div id="pay-summary" class="bg-cream rounded-xl p-4 text-sm mb-4"></div>
+
+        <div class="text-center mb-4">
+          <img id="pay-qr" class="w-52 h-52 mx-auto rounded-lg border" alt="Mã QR thanh toán Diệp An Trà" />
+          <p class="text-xs text-gray-500 mt-1">Quét bằng app ngân hàng bất kỳ · Tự điền sẵn số tiền &amp; nội dung</p>
+        </div>
+
+        <div class="bg-white border rounded-xl divide-y text-sm">
+          <div class="flex justify-between items-center gap-2 p-3"><span class="text-gray-500">Ngân hàng</span><span class="font-semibold">BIDV</span></div>
+          <div class="flex justify-between items-center gap-2 p-3"><span class="text-gray-500">Số tài khoản</span><span class="font-semibold flex items-center gap-2">3950262783 <button type="button" onclick="copyText('3950262783',this)" class="text-gold hover:text-earth">📋</button></span></div>
+          <div class="flex justify-between items-center gap-2 p-3"><span class="text-gray-500">Chủ tài khoản</span><span class="font-semibold text-right">Tổ hợp tác nông nghiệp Quân Hà</span></div>
+          <div class="flex justify-between items-center gap-2 p-3"><span class="text-gray-500">Số tiền</span><span id="pay-amount" class="font-bold text-primary text-base"></span></div>
+          <div class="flex justify-between items-center gap-2 p-3"><span class="text-gray-500">Nội dung CK</span><span class="font-semibold flex items-center gap-2 text-right"><span id="pay-content"></span> <button type="button" onclick="copyText(document.getElementById('pay-content').textContent,this)" class="text-gold hover:text-earth">📋</button></span></div>
+        </div>
+
+        <div class="bg-primary/5 text-primary text-xs rounded-lg p-3 my-4 leading-relaxed">
+          ✅ Đơn của anh/chị đã được ghi nhận. Sau khi chuyển khoản, Diệp An Trà sẽ gọi xác nhận và giao hàng. Anh/chị cũng có thể chọn <strong>thanh toán khi nhận (COD)</strong> — freeship đơn từ 300k.
+        </div>
+
+        <button onclick="closeOrder()" class="w-full bg-primary hover:bg-primaryLight text-white font-semibold py-3.5 rounded-full transition">Tôi đã hoàn tất</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ADMIN PANEL (truy cập: thêm ?mode=admin hoặc #admin vào URL) ============ -->
+  <div id="admin-panel" class="fixed inset-0 z-[90] hidden bg-gray-100 overflow-y-auto">
+    <!-- Login -->
+    <div id="admin-login" class="min-h-screen flex items-center justify-center p-4">
+      <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-sm">
+        <h2 class="font-heading text-2xl font-bold text-primary mb-1 text-center">Quản trị Diệp An Trà</h2>
+        <p class="text-center text-gray-500 text-sm mb-6">Đăng nhập để xem đơn hàng</p>
+        <input id="ad-user" placeholder="Tên đăng nhập" class="w-full border rounded-lg px-3 py-2.5 mb-3 outline-none focus:ring-2 focus:ring-gold" />
+        <input id="ad-pass" type="password" placeholder="Mật khẩu" class="w-full border rounded-lg px-3 py-2.5 mb-3 outline-none focus:ring-2 focus:ring-gold" />
+        <p id="ad-error" class="text-red-500 text-sm mb-3 hidden">Sai tài khoản hoặc mật khẩu</p>
+        <button onclick="adminLogin()" class="w-full bg-primary text-white font-bold py-3 rounded-full">Đăng nhập</button>
+        <a href="#" onclick="closeAdmin()" class="block text-center text-sm text-gray-400 mt-4">← Về trang bán hàng</a>
+      </div>
+    </div>
+    <!-- Dashboard -->
+    <div id="admin-dash" class="hidden max-w-6xl mx-auto p-4 md:p-8">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="font-heading text-2xl font-bold text-primary">📊 Dashboard đơn hàng</h2>
+        <div class="flex gap-2">
+          <button onclick="exportCSV()" class="bg-gold text-white text-sm font-semibold px-4 py-2 rounded-lg">⬇ Xuất CSV</button>
+          <button onclick="closeAdmin()" class="bg-gray-200 text-gray-700 text-sm font-semibold px-4 py-2 rounded-lg">Thoát</button>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white rounded-xl p-5 shadow-sm"><p class="text-gray-500 text-sm">Doanh thu hôm nay</p><p id="stat-today" class="text-2xl font-bold text-primary mt-1">0đ</p></div>
+        <div class="bg-white rounded-xl p-5 shadow-sm"><p class="text-gray-500 text-sm">Tổng doanh thu</p><p id="stat-total" class="text-2xl font-bold text-primary mt-1">0đ</p></div>
+        <div class="bg-white rounded-xl p-5 shadow-sm"><p class="text-gray-500 text-sm">Đơn hôm nay</p><p id="stat-today-orders" class="text-2xl font-bold text-primary mt-1">0</p></div>
+        <div class="bg-white rounded-xl p-5 shadow-sm"><p class="text-gray-500 text-sm">Tổng đơn</p><p id="stat-total-orders" class="text-2xl font-bold text-primary mt-1">0</p></div>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-primary/5 text-primary text-left">
+            <tr><th class="p-3">Thời gian</th><th class="p-3">Khách</th><th class="p-3">SĐT</th><th class="p-3">Sản phẩm</th><th class="p-3">SL</th><th class="p-3">Tiền</th><th class="p-3">Trạng thái</th></tr>
+          </thead>
+          <tbody id="admin-rows"><tr><td colspan="7" class="p-6 text-center text-gray-400">Chưa có đơn hàng</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // ---------- Loading ----------
+    window.addEventListener('load', () => {
+      const l = document.getElementById('loader');
+      l.style.opacity = '0';
+      setTimeout(() => l.style.display = 'none', 500);
+    });
+
+    // ---------- Reveal on scroll ----------
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ---------- Sticky CTA ----------
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('sticky-cta');
+      if (window.scrollY > 500) bar.classList.remove('translate-y-full');
+      else bar.classList.add('translate-y-full');
+    });
+
+    // ---------- FAQ accordion ----------
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const body = btn.nextElementSibling;
+        const icon = btn.querySelector('.faq-icon');
+        const open = body.style.maxHeight && body.style.maxHeight !== '0px';
+        document.querySelectorAll('.faq-body').forEach(b => { b.style.maxHeight = '0px'; });
+        document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+        if (!open) { body.style.maxHeight = body.scrollHeight + 'px'; icon.textContent = '−'; }
+      });
+    });
+
+    // ---------- Order modal ----------
+    const modal = document.getElementById('order-modal');
+    const fmt = n => n.toLocaleString('vi-VN') + 'đ';
+
+    function calcTotal() {
+      const [, price] = document.getElementById('of-product').value.split('|');
+      const qty = Math.max(1, parseInt(document.getElementById('of-qty').value) || 1);
+      document.getElementById('of-total').textContent = fmt(price * qty);
+    }
+    document.getElementById('of-product').addEventListener('change', calcTotal);
+    document.getElementById('of-qty').addEventListener('input', calcTotal);
+
+    function openOrder(name, price) {
+      const sel = document.getElementById('of-product');
+      for (const o of sel.options) { if (o.value.startsWith(name + '|')) o.selected = true; }
+      document.getElementById('of-qty').value = 1;
+      document.getElementById('order-form').classList.remove('hidden');
+      document.getElementById('order-success').classList.add('hidden');
+      document.getElementById('of-error').classList.add('hidden');
+      calcTotal();
+      modal.classList.remove('hidden'); modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeOrder() {
+      modal.classList.add('hidden'); modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    modal.addEventListener('click', e => { if (e.target === modal) closeOrder(); });
+
+    document.getElementById('order-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('of-name').value.trim();
+      const phone = document.getElementById('of-phone').value.trim();
+      const address = document.getElementById('of-address').value.trim();
+      const err = document.getElementById('of-error');
+
+      if (!name || !phone || !address) { err.textContent = 'Vui lòng điền đầy đủ họ tên, SĐT và địa chỉ.'; err.classList.remove('hidden'); return; }
+      if (!/^0\d{9}$/.test(phone.replace(/\s/g, ''))) { err.textContent = 'Số điện thoại không hợp lệ (10 số, bắt đầu bằng 0).'; err.classList.remove('hidden'); return; }
+      err.classList.add('hidden');
+
+      const [product, price] = document.getElementById('of-product').value.split('|');
+      const qty = Math.max(1, parseInt(document.getElementById('of-qty').value) || 1);
+      const total = price * qty;
+
+      const orders = JSON.parse(localStorage.getItem('dat_orders') || '[]');
+      orders.push({ time: new Date().toISOString(), name, phone, address, product, qty, total, status: 'Mới' });
+      localStorage.setItem('dat_orders', JSON.stringify(orders));
+
+      // Chuyển sang bước thanh toán
+      const digits = phone.replace(/\D/g, '');
+      const content = 'DIEPANTRA ' + digits;
+      document.getElementById('order-form').classList.add('hidden');
+      document.getElementById('order-success').classList.remove('hidden');
+      document.getElementById('pay-summary').innerHTML =
+        '<div class="flex justify-between mb-1"><span class="text-gray-500">Sản phẩm</span><span class="font-medium text-right">' + product + '</span></div>' +
+        '<div class="flex justify-between mb-1"><span class="text-gray-500">Số lượng</span><span class="font-medium">' + qty + '</span></div>' +
+        '<div class="flex justify-between mb-1"><span class="text-gray-500">Người nhận</span><span class="font-medium text-right">' + name + ' · ' + phone + '</span></div>' +
+        '<div class="flex justify-between pt-2 mt-2 border-t"><span class="text-gray-500">Tổng cộng</span><span class="font-bold text-primary text-base">' + fmt(total) + '</span></div>';
+      document.getElementById('pay-qr').src = 'https://qr.sepay.vn/img?acc=3950262783&bank=BIDV&amount=' + total + '&des=' + encodeURIComponent(content);
+      document.getElementById('pay-amount').textContent = fmt(total);
+      document.getElementById('pay-content').textContent = content;
+      document.getElementById('order-success').parentElement.scrollTop = 0;
+    });
+
+    // Copy to clipboard
+    function copyText(txt, btn) {
+      navigator.clipboard.writeText(txt).then(() => {
+        const old = btn.textContent; btn.textContent = '✓';
+        setTimeout(() => btn.textContent = old, 1200);
+      });
+    }
+
+    // ---------- Count up ----------
+    const counted = new Set();
+    const countObs = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting && !counted.has(e.target)) {
+          counted.add(e.target);
+          const el = e.target, target = +el.dataset.count, plus = target >= 1000 ? '+' : '';
+          let cur = 0; const step = Math.ceil(target / 40);
+          const t = setInterval(() => { cur += step; if (cur >= target) { cur = target; clearInterval(t); }
+            el.textContent = cur.toLocaleString('vi-VN') + plus; }, 25);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+
+    // ---------- ADMIN ----------
+    const ADMIN_USER = 'Admin', ADMIN_PASS = 'Admin@123';
+    function isAdminURL() {
+      const p = new URLSearchParams(location.search);
+      return p.get('mode') === 'admin' || location.hash === '#admin';
+    }
+    function openAdmin() { document.getElementById('admin-panel').classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    function closeAdmin() {
+      document.getElementById('admin-panel').classList.add('hidden');
+      document.body.style.overflow = '';
+      history.replaceState(null, '', location.pathname);
+    }
+    function adminLogin() {
+      const u = document.getElementById('ad-user').value, p = document.getElementById('ad-pass').value;
+      if (u === ADMIN_USER && p === ADMIN_PASS) {
+        document.getElementById('admin-login').classList.add('hidden');
+        document.getElementById('admin-dash').classList.remove('hidden');
+        renderAdmin();
+      } else { document.getElementById('ad-error').classList.remove('hidden'); }
+    }
+    function renderAdmin() {
+      const orders = JSON.parse(localStorage.getItem('dat_orders') || '[]');
+      const today = new Date().toDateString();
+      let todayRev = 0, totalRev = 0, todayCount = 0;
+      orders.forEach(o => { totalRev += o.total; if (new Date(o.time).toDateString() === today) { todayRev += o.total; todayCount++; } });
+      const f = n => n.toLocaleString('vi-VN') + 'đ';
+      document.getElementById('stat-today').textContent = f(todayRev);
+      document.getElementById('stat-total').textContent = f(totalRev);
+      document.getElementById('stat-today-orders').textContent = todayCount;
+      document.getElementById('stat-total-orders').textContent = orders.length;
+
+      const tbody = document.getElementById('admin-rows');
+      if (!orders.length) { tbody.innerHTML = '<tr><td colspan="7" class="p-6 text-center text-gray-400">Chưa có đơn hàng</td></tr>'; return; }
+      const statuses = ['Mới', 'Đã xác nhận', 'Đang giao', 'Hoàn thành', 'Hủy'];
+      tbody.innerHTML = orders.map((o, i) => {
+        const d = new Date(o.time);
+        const opts = statuses.map(s => '<option ' + (s === o.status ? 'selected' : '') + '>' + s + '</option>').join('');
+        return '<tr class="border-t">' +
+          '<td class="p-3 whitespace-nowrap">' + d.toLocaleString('vi-VN') + '</td>' +
+          '<td class="p-3">' + o.name + '<br><span class="text-xs text-gray-400">' + o.address + '</span></td>' +
+          '<td class="p-3">' + o.phone + '</td>' +
+          '<td class="p-3">' + o.product + '</td>' +
+          '<td class="p-3">' + o.qty + '</td>' +
+          '<td class="p-3 font-semibold">' + f(o.total) + '</td>' +
+          '<td class="p-3"><select onchange="updateStatus(' + i + ',this.value)" class="border rounded px-2 py-1 text-xs">' + opts + '</select></td>' +
+          '</tr>';
+      }).join('');
+    }
+    function updateStatus(i, val) {
+      const orders = JSON.parse(localStorage.getItem('dat_orders') || '[]');
+      if (orders[i]) { orders[i].status = val; localStorage.setItem('dat_orders', JSON.stringify(orders)); renderAdmin(); }
+    }
+    function exportCSV() {
+      const orders = JSON.parse(localStorage.getItem('dat_orders') || '[]');
+      if (!orders.length) { alert('Chưa có đơn hàng để xuất.'); return; }
+      const head = ['Thời gian', 'Họ tên', 'SĐT', 'Địa chỉ', 'Sản phẩm', 'Số lượng', 'Thành tiền', 'Trạng thái'];
+      const rows = orders.map(o => [new Date(o.time).toLocaleString('vi-VN'), o.name, o.phone, o.address, o.product, o.qty, o.total, o.status]);
+      const csv = '﻿' + [head, ...rows].map(r => r.map(c => '"' + String(c).replace(/"/g, '""') + '"').join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'don-hang-diep-an-tra-' + new Date().toISOString().slice(0, 10) + '.csv';
+      a.click();
+    }
+    if (isAdminURL()) openAdmin();
+  </script>
+</body>
+</html>
